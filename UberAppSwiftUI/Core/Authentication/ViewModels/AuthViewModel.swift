@@ -26,14 +26,12 @@ class AuthViewModel: ObservableObject {
         Auth.auth().signIn(withEmail: withEmail, password: password) { result, error in
             if let error = error {
                 print("ERROR: User couldnt log in",error.localizedDescription,withEmail)
-                return // we dont want our function go further
+                return
             }
             
             if let user = result?.user {
                 self.userSession = user
-                print("BU USER KIM AMK AUTH2", user)
                 self.userService.fetchUser()
-                
             }
         }
         

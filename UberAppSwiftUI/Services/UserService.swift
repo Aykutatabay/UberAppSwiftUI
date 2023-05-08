@@ -21,7 +21,6 @@ class UserService: ObservableObject {
              
          } receiveValue: { [weak self] user in
              self?.user = user
-             print("BU USER KIM AMK",user.fullName)
          }.store(in: &cancellables)
     }
     

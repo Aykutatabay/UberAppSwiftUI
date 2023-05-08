@@ -92,7 +92,6 @@ class HomeViewModel:NSObject, ObservableObject {
                 self?.drivers = []
                 if user.accountType == .passenger {
                     self?.fetchDrivers()
-                    print("DEBUG: LALALL LALALAL LALALAL")
                     self?.addTripObserverForPassenger()
                 } else {
                     self?.addTripObserverForDriver()
@@ -150,7 +149,6 @@ extension HomeViewModel {
             
             guard let trip = try? change.document.data(as: Trip.self) else { return }
             self.trip = trip
-            print("DEBUG: LALL LALALLA LALLLALAL")
             print("DEBUG: Updated trip state is \(trip.state)")
         }
     }
